@@ -26,5 +26,5 @@ uv run sources/bonus.py
 ## Explanations
 
 $$
-\int_a^b f(x) \,dx
+\f(x) = 2
 $$
