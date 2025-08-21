@@ -26,5 +26,5 @@ uv run sources/bonus.py
 ## Explanations
 
 $$
-f(x) = 2
+f(x) = \sum_{i=0}^n
 $$
