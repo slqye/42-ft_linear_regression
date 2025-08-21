@@ -26,22 +26,22 @@ uv run sources/bonus.py
 ## Explanations
 
 $$
-f(x) = \frac{1}{2n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
+f(x) = \frac{1}{2n} \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
 $$
 
 $$
 u = a * mileage(i) + b - price(i)
 $$
 $$
-\frac{\partial f}{\partial a} = 2 * \frac{1}{2n} * \sum_{i=0}^n uu'
+\frac{\partial f}{\partial a} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'
 $$
 $$
-\frac{\partial f}{\partial a} = \frac{1}{n} * \sum_{i=0}^n a * mileage(i) + b - price(i) * mileage(i)
+\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i) * mileage(i)
 $$
 
 $$
-\frac{\partial f}{\partial b} = 2 * \frac{1}{2n} * \sum_{i=0}^n uu'
+\frac{\partial f}{\partial b} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'
 $$
 $$
-\frac{\partial f}{\partial b} = \frac{1}{n} * \sum_{i=0}^n a * mileage(i) + b - price(i)
+\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i)
 $$
