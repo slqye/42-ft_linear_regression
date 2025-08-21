@@ -26,5 +26,5 @@ uv run sources/bonus.py
 ## Explanations
 
 $$
-f(x) = 1/n * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
+f(x) = \frac{1}{n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
 $$
