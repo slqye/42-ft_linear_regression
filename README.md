@@ -27,5 +27,5 @@ uv run sources/bonus.py
 
 First we need to define the loss function, here i'm using the MSE definition
 $$
-f(x) = \frac{1}{n}\sum_{i=0}^n (a \cdot \text{mileage}(x) + b - \text{price}(x))^{2}
+f(x) = \frac{1}{n}\sum_{i=0}^n
 $$
