@@ -27,24 +27,16 @@ uv run sources/bonus.py
 
 The first step is to define our loss function. Here i am using the MSE definition but "optimized" because of the $\frac{1}{2n}$ that i will explain after.
 
-$$
-f(x) = \frac{1}{2n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
-$$
+$f(x) = \frac{1}{2n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2$
 
 Now that we have the loss function we need to take the partial derivative of `a` and `b` because we want to calculate the gradient of the loss function.
-$$
-u = a * mileage(i) + b - price(i)
-$$
-$$
-\frac{\partial f}{\partial a} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'
-$$
-$$
-\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i) * mileage(i)
-$$
 
-$$
-\frac{\partial f}{\partial b} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'
-$$
-$$
-\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i)
-$$
+$u = a * mileage(i) + b - price(i)$
+
+$\frac{\partial f}{\partial a} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'$
+
+$\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i) * mileage(i)$
+
+$\frac{\partial f}{\partial b} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'$
+
+$\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i)$
