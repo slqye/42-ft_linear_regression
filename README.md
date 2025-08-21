@@ -26,5 +26,5 @@ uv run sources/bonus.py
 ## Explanations
 
 $$
-f(x) = \sum_{i=0}^n
+f(x) = \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
 $$
