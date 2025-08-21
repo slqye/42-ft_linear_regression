@@ -1,8 +1,5 @@
 import sys
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 DATASET_PATH = "includes/data.csv"
 MAX_DEPTH = 1000
@@ -41,28 +38,12 @@ def compute_t1_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 	derivated_mse: float = 1 / data_length * derivated_mse_sum
 	return LEARNING_RATE * derivated_mse
 
-def reverse_normalisation(dataset: pd.DataFrame, dataset_min: list[float], dataset_max: list[float]) -> None:
+def output_result(t0: float, t1: float) -> None:
 	"""
 	Temporary docstring.
 	"""
-	for index, column in enumerate(dataset.columns):
-		values = dataset[column]
-		dataset[column] = values * (dataset_max[index] - dataset_min[index]) + dataset_min[index]
-
-def plot_model(dataset: pd.DataFrame, t0: float, t1: float) -> None:
-	"""
-	Temporary docstring.
-	"""
-	sns.set_theme()
-	sns.scatterplot(
-		data=dataset,
-		x="km",
-		y="price"
-	)
-	x_line = np.linspace(min(dataset["km"]), max(dataset["km"]), 10)
-	y_line = t1 * x_line + t0
-	plt.plot(x_line, y_line)
-	plt.show()
+	with open("training.out", "w", encoding="utf-8") as file:
+		file.write(f"{str(t1)}\n{str(t0)}")
 
 def main():
 	"""
@@ -85,8 +66,7 @@ def main():
 		t1_holder = (t1 * (dataset_max[1] - dataset_min[1])) / (dataset_max[0] - dataset_min[0])
 		t0_holder = t0 * (dataset_max[1] - dataset_min[1]) + dataset_min[1] - t1_holder * dataset_min[0]
 		t0, t1 = t0_holder, t1_holder
-		# TODO: write output to training.out
-		print(f"{t1:.2f}x + {t0:.2f}")
+		output_result(t0, t1)
 	except Exception as error:
 		print("Error:", error, file=sys.stderr)
 		sys.exit(1)
