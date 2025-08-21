@@ -13,12 +13,12 @@ To train the model
 uv run sources/train.py
 ```
 
-To use the model to make predictions
+To make predictions
 ```bash
 uv run sources/predict.py
 ```
 
-To see the model in a plot with the dataset
+To plot the model
 ```bash
 uv run sources/bonus.py
 ```
