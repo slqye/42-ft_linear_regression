@@ -25,10 +25,12 @@ uv run sources/bonus.py
 
 ## Explanations
 
+The first step is to define our loss function. Here i am using the MSE definition but "optimized" because of the $ \frac{1}{2n} that i will explain after.
 $$
 f(x) = \frac{1}{2n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2
 $$
 
+Now that we have the loss function we need to take the partial derivative of `a` and `b` because we want to calculate the gradient of the loss function.
 $$
 u = a * mileage(i) + b - price(i)
 $$
