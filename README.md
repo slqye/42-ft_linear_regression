@@ -25,7 +25,6 @@ uv run sources/bonus.py
 
 ## Explanations
 
-First we need to define the loss function, here i'm using the MSE definition
 $$
-f(x) = \frac{1}{n}\sum_{i=0}^n
+\int_a^b f(x) \,dx
 $$
