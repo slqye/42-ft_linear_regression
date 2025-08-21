@@ -11,8 +11,6 @@ Hi! This is my 42 cursus **ft_linear_regression** project. The objective was to 
 To train the model
 ```bash
 uv run sources/train.py
-uv run sources/predict.py
-uv run sources/bonus.py
 ```
 
 To use the model to make predictions
