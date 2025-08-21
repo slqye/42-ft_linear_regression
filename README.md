@@ -1,6 +1,6 @@
 ![Banner](assets/banner.png)
 
-Hi! This is my 42 cursus **ft_linear_regression** project. The objective was to implement from scratch the gradient descent algorithme and use it to train our model.
+Hi! This is my 42 cursus **ft_linear_regression** project. The objective was to implement from scratch the gradient descent algorithm and use it to train our model.
 
 ## Usage
 
