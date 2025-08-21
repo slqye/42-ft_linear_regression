@@ -8,7 +8,7 @@ LEARNING_RATE = 0.1
 
 def normalize_dataset(dataset: pd.DataFrame) -> None:
 	"""
-	Temporary docstring.
+	Normalizes the dataset columns to a [0, 1] range using min-max scaling.
 	"""
 	for column in dataset.columns:
 		values = dataset[column]
@@ -16,7 +16,8 @@ def normalize_dataset(dataset: pd.DataFrame) -> None:
 
 def compute_t0_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 	"""
-	Temporary docstring.
+	Computes the gradient descent step for the intercept (t0)
+	based on the MSE derivative (optimized).
 	"""
 	data_length: int = dataset.shape[0]
 	derivated_mse_sum: float = sum([
@@ -28,7 +29,8 @@ def compute_t0_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 
 def compute_t1_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 	"""
-	Temporary docstring.
+	Computes the gradient descent step for the slope (t1)
+	based on the MSE derivative (optimized).
 	"""
 	data_length: int = dataset.shape[0]
 	derivated_mse_sum: float = sum([
@@ -40,14 +42,15 @@ def compute_t1_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 
 def output_result(t0: float, t1: float) -> None:
 	"""
-	Temporary docstring.
+	Writes the trained linear regression parameters to a file.
 	"""
 	with open("training.out", "w", encoding="utf-8") as file:
 		file.write(f"{str(t1)}\n{str(t0)}")
 
 def main():
 	"""
-	Temporary docstring.
+	Trains a linear regression model using gradient descent
+	and saves the final parameters to "training.out".
 	"""
 	try:
 		t0: float = 0

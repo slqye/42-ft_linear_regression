@@ -2,7 +2,7 @@ import sys
 
 def get_training_output() -> tuple[float, float]:
 	"""
-	Temporary docstring.
+	Reads slope and intercept from "training.out".
 	"""
 	try:
 		with open("training.out", "r", encoding="utf-8") as file:
@@ -18,7 +18,8 @@ def get_training_output() -> tuple[float, float]:
 
 def main():
 	"""
-	Temporary docstring.
+	Calculates and displays the estimated car price
+	based on mileage using a linear regression model.
 	"""
 	try:
 		function: tuple[float, float] = get_training_output()

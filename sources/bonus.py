@@ -8,7 +8,7 @@ DATASET_PATH = "includes/data.csv"
 
 def get_training_output() -> tuple[float, float]:
 	"""
-	Temporary docstring.
+	Reads slope and intercept from "training.out".
 	"""
 	try:
 		with open("training.out", "r", encoding="utf-8") as file:
@@ -23,6 +23,9 @@ def get_training_output() -> tuple[float, float]:
 		sys.exit(1)
 
 def compute_rmse(dataset: pd.DataFrame, t0: float, t1: float) -> float:
+	"""
+	Compute linear regression RMSE (root mean squared error).
+	"""
 	mse_array: list[float] = [
 		(x["price"] - (t1 * x["km"] + t0))**2
 		for _, x in dataset.iterrows()
@@ -31,7 +34,7 @@ def compute_rmse(dataset: pd.DataFrame, t0: float, t1: float) -> float:
 
 def plot_model(dataset: pd.DataFrame, t0: float, t1: float, rmse: float) -> None:
 	"""
-	Temporary docstring.
+	Plots the dataset and the linear regression model with RMSE.
 	"""
 	sns.set_theme()
 	sns.scatterplot(
@@ -54,7 +57,7 @@ def plot_model(dataset: pd.DataFrame, t0: float, t1: float, rmse: float) -> None
 
 def main():
 	"""
-	Temporary docstring.
+	Loads the dataset, evaluates the regression model, and plots it with the computed RMSE.
 	"""
 	try:
 		dataset: pd.DataFrame = pd.read_csv(DATASET_PATH)
