@@ -43,5 +43,5 @@ $$
 \frac{\partial f}{\partial b} = 2 * \frac{1}{2n} * \sum_{i=0}^n u * u'
 $$
 $$
-\frac{\partial f}{\partial a} = \frac{1}{n} * \sum_{i=0}^n a * mileage(i) + b - price(i)
+\frac{\partial f}{\partial b} = \frac{1}{n} * \sum_{i=0}^n a * mileage(i) + b - price(i)
 $$
