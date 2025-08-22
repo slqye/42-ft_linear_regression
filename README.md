@@ -27,18 +27,19 @@ uv run sources/bonus.py
 ## Explanations
 
 The first step is to define our loss function. Here i am using the MSE definition.
-Note that using $\frac{1}{2n}$ does not refear to the correct definition, in wich, we have $\frac{1}{n}$.
-This is because in the subject the result gradient is defined with $\frac{1}{n}$.
 
-$f(x) = \frac{1}{2n} * \sum_{i=0}^n (a * mileage(i) + b - price(i))^2$
+> [!NOTE]
+> The factor \frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation..
 
-Now that we have the loss function we need to take the partial derivative of `a` and `b` because we want to calculate the gradient of the loss function.
-To help with calculations i will define: $u = a * mileage(i) + b - price(i)$
+$f(x) = \frac{1}{2n} \sum_{i=0}^n (a \cdot mileage(i) + b - price(i))^2$
 
-$\frac{\partial f}{\partial a} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'$
+Now that we have the loss function we need to take the partial derivative of `a` and `b` because we want to calculate the gradient of the loss function to minimise it.
+To help with calculations i will define: $u = a \cdot mileage(i) + b - price(i)$
 
-$\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i) * mileage(i)$
+$\frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n uu'$
 
-$\frac{\partial f}{\partial b} = 2 * \frac{1}{2n} \sum_{i=0}^n uu'$
+$\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a \cdot mileage(i) + b - price(i) * mileage(i)$
 
-$\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a * mileage(i) + b - price(i)$
+$\frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n uu'$
+
+$\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a \cdot mileage(i) + b - price(i)$
