@@ -1,4 +1,4 @@
-![Banner](assets/banner.png)
+# ft_linear_regression
 
 Hi! This is my 42 cursus project, ft_linear_regression.
 The objective was to implement the gradient descent algorithm from scratch and use it to train a linear regression model that predict a car price based on its mileage.
