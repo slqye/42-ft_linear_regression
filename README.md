@@ -31,7 +31,7 @@ The first step is to define our loss function. Here, I am using the Mean Squared
 > [!NOTE]
 > The factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
-$f(x) = \frac{1}{2n} \sum_{i=0}^(n-1) (a \cdot mileage(i) + b - price(i))^2$
+$f(x) = \frac{1}{2n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i))^2$
 
 Now that we have the loss function, we need to compute the partial derivatives with respect to `a` and `b` in order to calculate the gradient and minimize the loss.
 $u = a \cdot mileage(i) + b - price(i)$
