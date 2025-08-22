@@ -26,13 +26,13 @@ uv run sources/bonus.py
 
 ## Explanations
 
-Here i will explain how I have retrived the formula given by the subject.
-The first step is to define our loss function. Here, I am using the Mean Squared Error (MSE) definition.
+In this section i will explain how I have retrived the formula given by the subject.
+The first step is to define our loss function. Here I am using the [Mean Squared Error](https://en.wikipedia.org/wiki/Mean_squared_error) (MSE) definition.
 Note that the factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
 $f(a, b) = \frac{1}{2n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i))^2$
 
-Now that we have the loss function, we need to compute the partial derivatives with respect to `a` and `b` in order to calculate the gradient and minimize the loss.
+Now that we have the loss function, we need to compute the partial derivatives with respect to $a$ and $b$ in order to calculate the gradient and minimize the loss.
 
 Let:
 
