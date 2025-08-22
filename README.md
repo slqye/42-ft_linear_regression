@@ -26,10 +26,9 @@ uv run sources/bonus.py
 
 ## Explanations
 
+Here i will explain how I have retrived the formula given by the subject.
 The first step is to define our loss function. Here, I am using the Mean Squared Error (MSE) definition.
-
-> [!NOTE]
-> The factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
+Here the factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
 $f(a, b) = \frac{1}{2n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i))^2$
 
@@ -42,11 +41,9 @@ $u_i = a \cdot mileage(i) + b - price(i)$
 Then by using the [chain rule](https://en.wikipedia.org/wiki/Chain_rule):
 
 $\frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} u_iu_i'$
-
 $\frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} u_iu_i'$
 
 $\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i)) \cdot mileage(i)$
-
 $\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^{n-1} a \cdot mileage(i) + b - price(i)$
 
 ## Result
