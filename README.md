@@ -26,23 +26,23 @@ uv run sources/bonus.py
 
 ## Explanations
 
-The first step is to define our loss function. Here i am using the MSE definition.
+The first step is to define our loss function. Here, I am using the Mean Squared Error (MSE) definition.
 
 > [!NOTE]
 > The factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
-$f(x) = \frac{1}{2n} \sum_{i=0}^n (a \cdot mileage(i) + b - price(i))^2$
+$f(x) = \frac{1}{2n} \sum_{i=0}^n-1 (a \cdot mileage(i) + b - price(i))^2$
 
-Now that we have the loss function we need to take the partial derivative of `a` and `b` because we want to calculate the gradient of the loss function to minimise it.
-To help with calculations i will define: $u = a \cdot mileage(i) + b - price(i)$
+Now that we have the loss function, we need to compute the partial derivatives with respect to `a` and `b` in order to calculate the gradient and minimize the loss.
+$u = a \cdot mileage(i) + b - price(i)$
 
-$\frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n uu'$
+$\frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n-1 uu'$
 
-$\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n a \cdot mileage(i) + b - price(i) * mileage(i)$
+$\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^n-1 (a \cdot mileage(i) + b - price(i)) * mileage(i)$
 
-$\frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n uu'$
+$\frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^n-1 uu'$
 
-$\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n a \cdot mileage(i) + b - price(i)$
+$\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^n-1 a \cdot mileage(i) + b - price(i)$
 
 ## Result
 
