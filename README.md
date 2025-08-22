@@ -42,14 +42,11 @@ $$
 
 $$
 \frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} uu'
-$$
-
-$$
-\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i)) * mileage(i)
-$$
-
-$$
 \frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} uu'
+$$
+
+$$
+\frac{\partial f}{\partial a} = \frac{1}{n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i)) \cdot mileage(i)
 $$
 
 $$
