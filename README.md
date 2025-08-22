@@ -29,7 +29,7 @@ uv run sources/bonus.py
 The first step is to define our loss function. Here i am using the MSE definition.
 
 > [!NOTE]
-> The factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation..
+> The factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
 $f(x) = \frac{1}{2n} \sum_{i=0}^n (a \cdot mileage(i) + b - price(i))^2$
 
