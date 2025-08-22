@@ -28,7 +28,7 @@ uv run sources/bonus.py
 
 Here i will explain how I have retrived the formula given by the subject.
 The first step is to define our loss function. Here, I am using the Mean Squared Error (MSE) definition.
-Here the factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
+Note that the factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
 
 $f(a, b) = \frac{1}{2n} \sum_{i=0}^{n-1} (a \cdot mileage(i) + b - price(i))^2$
 
