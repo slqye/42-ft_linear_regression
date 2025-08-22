@@ -11,7 +11,7 @@ def normalize_dataset(dataset: pd.DataFrame) -> None:
 	Normalizes the dataset columns to a [0, 1] range using min-max scaling.
 	"""
 	for column in dataset.columns:
-		values = dataset[column]
+		values: pd.Series = dataset[column]
 		dataset[column] = (values - values.min()) / (values.max() - values.min())
 
 def compute_t0_step(dataset: pd.DataFrame, t0: float, t1: float) -> float:
@@ -60,14 +60,15 @@ def main():
 		dataset_max: list[float] = [dataset[x].max() for x in dataset.columns]
 		normalize_dataset(dataset)
 		for _ in range(MAX_DEPTH):
-			t0_step = compute_t0_step(dataset, t0, t1)
-			t1_step = compute_t1_step(dataset, t0, t1)
+			t0_step: float = compute_t0_step(dataset, t0, t1)
+			t1_step: float = compute_t1_step(dataset, t0, t1)
 			if abs(t0_step) <= MIN_STEP and abs(t1_step) <= MIN_STEP:
 				break
 			t0 -= t0_step
 			t1 -= t1_step
-		t1_holder = (t1 * (dataset_max[1] - dataset_min[1])) / (dataset_max[0] - dataset_min[0])
-		t0_holder = t0 * (dataset_max[1] - dataset_min[1]) + dataset_min[1] - t1_holder * dataset_min[0]
+		# Unnormalize t0 and t1
+		t1_holder: float = (t1 * (dataset_max[1] - dataset_min[1])) / (dataset_max[0] - dataset_min[0])
+		t0_holder: float = t0 * (dataset_max[1] - dataset_min[1]) + dataset_min[1] - t1_holder * dataset_min[0]
 		t0, t1 = t0_holder, t1_holder
 		output_result(t0, t1)
 	except Exception as error:
