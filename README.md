@@ -42,6 +42,7 @@ $$
 
 $$
 \frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} uu'
+
 \frac{\partial f}{\partial b} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} uu'
 $$
 
