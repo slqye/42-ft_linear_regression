@@ -39,7 +39,7 @@ Let:
 
 $u_i = a \cdot mileage(i) + b - price(i)$
 
-Then:
+Then by using the [chain rule](https://en.wikipedia.org/wiki/Chain_rule):
 
 $\frac{\partial f}{\partial a} = 2 \cdot \frac{1}{2n} \sum_{i=0}^{n-1} u_iu_i'$
 
