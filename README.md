@@ -24,7 +24,7 @@ To plot the model
 uv run sources/bonus.py
 ```
 
-## Explanations
+## Maths
 
 The first step is to define our loss function. Here I am using the [Mean Squared Error](https://en.wikipedia.org/wiki/Mean_squared_error) (MSE) definition.
 Note that the factor $\frac{1}{2n}$ is used instead of $\frac{1}{n}$ to simplify the gradient calculation.
