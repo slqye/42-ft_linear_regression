@@ -54,4 +54,5 @@ $\frac{\partial f}{\partial b} = \frac{1}{n} \sum_{i=0}^{n-1} a \cdot mileage(i)
 ## Ressources
 
 [StatQuest: Gradient Descent, Step-by-Step](https://www.youtube.com/watch?v=sDv4f4s2SB8)
+
 [Eugene Khutoryansky: Gradients and Partial Derivatives](https://www.youtube.com/watch?v=GkB4vW16QHI)
